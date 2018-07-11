@@ -8,7 +8,7 @@ manifest.json
 manifest.edn
 .nrepl-port
 .shadow-cljs
-frontend/public/css/*.css
-frontend/public/js/*.js
-frontend/dist/*
-frontend/public/js/manifest.edn
+public/css/*.css
+public/js/*.js
+dist/*
+public/js/manifest.edn
