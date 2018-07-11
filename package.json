@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "clean": "shx rm -rf dist && shx rm -rf public/js",
+    "dist:mkdir": "shx mkdir -p dist/{js,css,img}",
+    "dist:js": "shadow-cljs release prod && shx cp public/js/main.js dist/js/main.js && shx cp public/service-worker.js dist/service-worker.js",
+    "dist:html": "shx cp public/index.html dist/ && shx cp public/manifest.webapp.json dist/",
+    "dist:img": "shx cp -R public/img/* dist/img",
+    "dist:css": "node-sass-chokidar --include-path ./src/css/ --include-path ./node_modules src/ -o dist/",
+    "build-css": "node-sass-chokidar --include-path ./src/css/ --include-path ./node_modules src/ -o public/",
+    "dist:bust": "hashmark -r -c dist -l 6 '{css,js,img}/*.{js,css,jpg,png}' '{dir}/{name}-{hash}{ext}' | replaceinfiles -S -s 'dist/**/*.{css,html}' -d '{dir}/{base}'",
+    "release": "npm run clean && npm run dist:mkdir && npm run dist:js && npm run dist:css && npm run dist:html && npm run dist:img && npm run dist:bust",
+    "serve": "http-server dist -p 8080",
+    "shadow-start": "shadow-cljs start",
+    "shadow-stop": "shadow-cljs stop",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/css/ --include-path ./node_modules src/ -o public/ --watch --recursive",
+    "watch-dev": "shadow-cljs watch dev;",
+    "dev": "npm-run-all -p watch-css watch-dev",
+    "repl": "echo 'write: (shadow/repl :dev) to get into the CLJS Repl.' && shadow-cljs clj-repl",
+    "deploy": "yarn release && firebase deploy"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.3.0",
+    "@material-ui/icons": "^1.1.0",
+    "blueimp-load-image": "^2.19.0",
+    "breakpoint-sass": "^2.7.1",
+    "create-react-class": "^15.6.2",
+    "firebase": "^5.2.0",
+    "hashmark": "5.0.0",
+    "highlight.js": "^9.12.0",
+    "http-server": "0.11.1",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.1.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-flip-move": "^3.0.2",
+    "react-highlight.js": "^1.0.7",
+    "replaceinfiles": "1.1.4",
+    "shadow-cljs": "^2.4.1",
+    "shx": "0.3.0",
+    "uuid": "^3.2.1"
+  }
+}
