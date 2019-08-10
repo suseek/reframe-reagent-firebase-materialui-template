@@ -1,4 +1,4 @@
-(ns template.fb.auth
+(ns <%= name %>.fb.auth
   (:require ["firebase" :as firebase]
             [oops.core :refer [ocall oget]]
             [re-frame.core :refer [dispatch]]))

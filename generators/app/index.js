@@ -79,10 +79,12 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('yarn.lock'), this.destinationPath('yarn.lock'));
     this.fs.copy(this.templatePath('firebase.json'), this.destinationPath('firebase.json'));
     this.fs.copy(this.templatePath('dist'), this.destinationPath('dist'));
-    this.fs.copy(this.templatePath('public'), this.destinationPath('public'));
-    this.fs.copy(this.templatePath('src'), this.destinationPath('src'));
+    this.fs.copyTpl(this.templatePath('public'), this.destinationPath('public'), {
+        name: this.props.name
+    });
+    this.fs.copy(this.templatePath('src/css'), this.destinationPath('src/css'));
 
-    this.fs.copyTpl( this.templatePath('src/template/config.cljs'), this.destinationPath('src/template/config.cljs'), {
+    this.fs.copyTpl(this.templatePath('src/template'), this.destinationPath('src/' + this.props.name), {
         name: this.props.name,
         firebaseApiKey: this.props.firebaseApiKey,
         firebaseAuthDomain: this.props.firebaseAuthDomain,

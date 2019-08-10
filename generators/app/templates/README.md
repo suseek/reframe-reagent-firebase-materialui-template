@@ -36,3 +36,26 @@ All without any wrappers. Working.
 - `yarn repl`
 - `(shadow/repl :dev)`
 - looking at the current state: `@re-frame.db/app-db`
+
+### Caveats
+
+#### Node and Mac
+Tested with node `v11.15.0`. 
+Version `v12.7.0` is known to misbehave on Mac OS/X. Try downgrading if you bump into compilation problem, with:
+```bash
+nvm install v11.15.0
+nvm use v11.15.0
+```
+
+#### main.js not found
+Upon first `yarn dev` there will be following problem:
+```bash
+FileNotFoundException: public/js/main.js (No such file or directory)
+	java.io.FileOutputStream.open0 (FileOutputStream.java:-2)
+	java.io.FileOutputStream.open (FileOutputStream.java:270)
+	java.io.FileOutputStream.<init> (FileOutputStream.java:213)
+```
+Running the command again fixes the problem of the missing file:
+```bash
+yarn dev
+```

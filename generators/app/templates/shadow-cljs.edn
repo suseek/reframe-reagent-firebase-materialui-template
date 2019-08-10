@@ -22,10 +22,10 @@
                                                       "day8.re_frame.tracing.trace_enabled_QMARK_"  true}}
 
                  :modules {:main
-                           {:entries [template.core]}}
+                           {:entries [<%= name %>.core]}}
 
                  :devtools
-                 {:after-load  template.core/render
+                 {:after-load  <%= name %>.core/render
                   :http-root   "public"
                   :http-port   3000
                   :preloads    [devtools.preload
@@ -36,4 +36,4 @@
                   :asset-path "/js"
 
                   :modules {:main
-                            {:entries [template.core]}}}}}
+                            {:entries [<%= name %>.core]}}}}}

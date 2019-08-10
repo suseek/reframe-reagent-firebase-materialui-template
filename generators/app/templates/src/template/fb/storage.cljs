@@ -1,4 +1,4 @@
-(ns template.fb.storage
+(ns <%= name %>.fb.storage
   (:require
    ["firebase" :refer [storage]]
    [oops.core :refer [ocall]]))

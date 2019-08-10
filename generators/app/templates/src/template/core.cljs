@@ -1,16 +1,16 @@
-(ns template.core
+(ns <%= name %>.core
   (:require
-   [template.db.handlers]
-   [template.db.subs]
+   [<%= name %>.db.handlers]
+   [<%= name %>.db.subs]
    [reagent.core :as r]
    [reagent.session :as session]
    [re-frame.core :refer [subscribe dispatch dispatch-sync]]
-   [template.fb.init :refer [firebase-init]]
+   [<%= name %>.fb.init :refer [firebase-init]]
    ["@material-ui/core/Fade" :default Fade]
    ["@material-ui/core/styles" :refer [MuiThemeProvider createMuiTheme]]
    ["@material-ui/core/List" :default List]
    ["@material-ui/core/colors/cyan" :default cyanColor]
-   [template.components.top :as top]
+   [<%= name %>.components.top :as top]
    [oops.core :refer [ocall oget oset!]]))
 
 (def theme (createMuiTheme (clj->js {:palette {:primary {:light (oget cyanColor "400")

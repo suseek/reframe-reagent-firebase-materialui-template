@@ -1,4 +1,4 @@
-(ns template.db.subs
+(ns <%= name %>.db.subs
   (:require [re-frame.core :as rf]
             [oops.core :refer [ocall oget]]))
 

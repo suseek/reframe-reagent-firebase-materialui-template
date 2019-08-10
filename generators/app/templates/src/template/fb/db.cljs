@@ -1,4 +1,4 @@
-(ns template.fb.db
+(ns <%= name %>.fb.db
   (:require
    ["firebase" :refer [database]]
    [oops.core :refer [ocall]]))

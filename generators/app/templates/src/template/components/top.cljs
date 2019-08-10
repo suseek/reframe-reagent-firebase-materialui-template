@@ -1,4 +1,4 @@
-(ns template.components.top
+(ns <%= name %>.components.top
   (:require [re-frame.core :refer [subscribe dispatch]]
             [reagent.core :as r]
             ["@material-ui/core/AppBar" :default AppBar]
@@ -10,7 +10,7 @@
             ["@material-ui/core/List" :default List]
             ["@material-ui/core/Avatar" :default Avatar]
             ["@material-ui/core/ListItem" :default ListItem]
-            [template.fb.auth :refer [sign-in-with-google sign-out]]))
+            [<%= name %>.fb.auth :refer [sign-in-with-google sign-out]]))
 
 (defn login []
   (let []

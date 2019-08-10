@@ -1,7 +1,7 @@
-(ns template.db.handlers
+(ns <%= name %>.db.handlers
   (:require [re-frame.core :as rf]
             [oops.core :refer [ocall oget]]
-            [template.fb.db :as firebase-db]
+            [<%= name %>.fb.db :as firebase-db]
             [re-frame.core :refer [dispatch]]
             ["uuid" :as random]))
 

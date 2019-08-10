@@ -1,11 +1,11 @@
-(ns template.fb.init
+(ns <%= name %>.fb.init
   (:require ["firebase" :as firebase]
-            [template.fb.auth :as fb-auth]
+            [<%= name %>.fb.auth :as fb-auth]
             [oops.core :refer [ocall oget]]
-            [template.config]))
+            [<%= name %>.config]))
 
 (defn firebase-init
   []
   (let []
-    (firebase/initializeApp (clj->js template.config/firebase))
+    (firebase/initializeApp (clj->js <%= name %>.config/firebase))
     (fb-auth/on-auth-state-changed!)))

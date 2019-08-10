@@ -1,4 +1,4 @@
-(ns template.config)
+(ns <%= name %>.config)
 
 (def firebase {:apiKey "<%= firebaseApiKey %>"
                :authDomain "<%= firebaseAuthDomain %>"
