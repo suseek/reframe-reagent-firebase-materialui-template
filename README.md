@@ -1,38 +1,31 @@
-# Template Frontend
+# generator-shadow-reframe-firebase-materialui [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+> Yeoman generator for excelent [reframe-reagent-firebase-materialui-template](https://github.com/suseek/reframe-reagent-firebase-materialui-template)
 
-## Here's the most basic template for ClojureScript: 
-- Shadow-Cljs
-- Re-frame
-- Reagent
-- Material UI (http://www.material-ui.com/)
-- Firebase
-    - Realtime Database
-    - Storage
-    - Auth (Google for now)
+## Installation
 
-All without any wrappers. Working.
+First, install [Yeoman](http://yeoman.io) and generator-shadow-reframe-firebase-materialui using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-### Before you start playing
+```bash
+npm install -g yo
+npm install -g generator-shadow-reframe-firebase-materialui
+```
 
-1. Sign in to https://firebase.google.com/ and add a Realtime Database.
-2. Setup rules for the Realtime Database. Initially it's free 4 all.
-3. Enable Google login method in Authentication module.
-4. Go and have fun.
+Then generate your new project:
 
-### Running the project locally for development
+```bash
+mkdir my-reframe-project
+cd my-reframe-project
+yo shadow-reframe-firebase-materialui
+```
 
-- yarn install
-- yarn dev
-- after a moment you can go to http://localhost:3000/
-- in this environment you have `CTRL + H` for debugging FE events + DB
+## License
 
-### Build & Deploy to firebase
-- init your firebase with `(optional, needed for the first deploy)` 
-    - firebase login
-    - firebase use --add
-- yarn deploy
+MIT © [Pawel Kapala](kapware.com)
 
-### Run REPL and take a look at the state
-- `yarn repl`
-- `(shadow/repl :dev)`
-- looking at the current state: `@re-frame.db/app-db`
+
+[npm-image]: https://badge.fury.io/js/generator-shadow-reframe-firebase-materialui.svg
+[npm-url]: https://npmjs.org/package/generator-shadow-reframe-firebase-materialui
+[travis-image]: https://travis-ci.com/kapware/generator-shadow-reframe-firebase-materialui.svg?branch=master
+[travis-url]: https://travis-ci.com/kapware/generator-shadow-reframe-firebase-materialui
+[daviddm-image]: https://david-dm.org/kapware/generator-shadow-reframe-firebase-materialui.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/kapware/generator-shadow-reframe-firebase-materialui
