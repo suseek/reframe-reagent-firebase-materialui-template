@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Pawel Kapala",
+      "authorEmail": "github@kapware.com",
+      "authorUrl": "kapware.com"
+    }
+  }
+}

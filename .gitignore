@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea
 *.iml
 node_modules
@@ -12,3 +13,7 @@ public/css/*.css
 public/js/*.js
 dist/*
 public/js/manifest.edn
+=======
+node_modules
+coverage
+>>>>>>> Initial generated project
